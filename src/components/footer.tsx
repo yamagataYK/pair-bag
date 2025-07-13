@@ -10,16 +10,16 @@ export default function Footer() {
         <footer className={styles.footer}>
 
             <Link href="/" className={styles.navItem}>
-                <FontAwesomeIcon icon={faHouse} />
+                <FontAwesomeIcon icon={faHouse} className={styles.icon} />
                 <span className={styles.text}>ホーム</span>
             </Link>
             <div className={styles.cameraButtonWrapper}>
                 <Link href="/camera" className={styles.cameraButton}>
-                    <FontAwesomeIcon icon={faCamera} />
+                    <FontAwesomeIcon icon={faCamera} className={styles.cameraIcon} />
                 </Link>
             </div>
             <Link href="/chat" className={styles.navItem}>
-                <FontAwesomeIcon icon={faMessage} />
+                <FontAwesomeIcon icon={faMessage} className={styles.icon} />
                 <span className={styles.text}>トーク</span>
             </Link>
 

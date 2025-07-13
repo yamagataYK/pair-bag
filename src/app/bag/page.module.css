@@ -1,0 +1,27 @@
+/* bagの中身のcss */
+.main {
+    width: 100%;
+    background-color: #FFF5E4;
+}
+
+
+.bagImage {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-top: -20px;
+}
+
+.red {
+    background-image: url('/images/bag-background.png');
+}
+
+.blue {
+    background-image: url('/images/bag-background2.png');
+}
+
+.green {
+    background-image: url('/images/bag-background3.png');
+}

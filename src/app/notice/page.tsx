@@ -6,9 +6,9 @@ import Header from "@/components/header";
 export default function Page() {
     return (
         <>
-            <Header title='プロフィール' />
+            <Header title='特集' />
             <Main className={styles.main}>
-                profile
+                特集
             </Main>
             <Footer />
         </>

@@ -1,15 +1,49 @@
+'use client'
+
 import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
 import Main from "@/components/main";
-import bagFront from '@/assets/bagFront.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import Footer from "@/components/footer";
 import TopHeader from "@/components/topHeader";
+import { useState } from "react";
 
+import bagFront from '@/assets/bagFront.png'
+import bagFront2 from '@/assets/bagFront2.png'
+import bagFront3 from '@/assets/bagFront3.png'
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+
+
+type BagType = {
+  name: string,
+  color: 'red' | 'blue' | 'green',
+  image: StaticImport
+}
+
+const bagTypes: BagType[] = [
+  {
+    name: "やまけん",
+    color: "red",
+    image: bagFront
+  },
+  {
+    name: "たぬき",
+    color: "blue",
+    image: bagFront2
+  },
+  {
+    name: "イベント",
+    color: "green",
+    image: bagFront3
+  }
+]
 
 export default function Page() {
+  const [openBagSelector, setOpenBagSelector] = useState<boolean>(false)
+  const [selectedBag, setSelectedBag] = useState<BagType>(bagTypes[0])
+
   return (
     <>
       <TopHeader />
@@ -27,14 +61,34 @@ export default function Page() {
         </section >
         <section className={styles.shareBagWrap} >
           <h2>共有バッグ</h2>
-          <Link href="/bag" >
+          <Link href={`/bag?color=${selectedBag.color}&name=${selectedBag.name}`} >
             <div className={styles.shareBag}>
-              <Image className={styles.shareBagImage} src={bagFront} alt="赤いカバン" />
+              <Image className={styles.shareBagImage} src={selectedBag.image} alt={selectedBag?.color} />
             </div>
           </Link>
-          <button type="button" className={styles.addButton}>
-            <FontAwesomeIcon icon={faPlus} />
-          </button>
+          <div className={styles.addButtonWrap}>
+            <div className={styles.addButton}
+              onClick={() => {
+                setOpenBagSelector(!openBagSelector)
+              }}
+            >
+              <FontAwesomeIcon icon={faPlus} className={styles.icon} />
+              {openBagSelector &&
+                <div className={styles.bagSelector}>
+                  {bagTypes.map((bagType, idx) => (
+                    <div key={idx} className={styles.bagSelectorItem}
+                      onClick={() => {
+                        setSelectedBag(bagType)
+                      }}
+                    >
+                      <Image src={bagType.image} alt={bagType.color} className={styles.bagSelectorItemImage} />
+                      <p className={styles.bagSelectorItemName}>{bagType.name}</p>
+                    </div>
+                  ))}
+                </div>
+              }
+            </div>
+          </div>
         </section>
       </Main>
       <Footer />

@@ -16,7 +16,7 @@ export default function Header(props: Props) {
     return (
         <header className={styles.header}>
             <button onClick={() => router.back()}>
-                <FontAwesomeIcon icon={faChevronLeft} />
+                <FontAwesomeIcon icon={faChevronLeft} className={styles.icon} />
             </button>
             <h2 className={styles.title}>{props.title}</h2>
         </header>

@@ -21,7 +21,7 @@ export default function TopHeader() {
                 <Link href="/notice" className={styles.navItem}>
                     <FontAwesomeIcon icon={faBullhorn} className={styles.icon} />
                 </Link>
-                <Link href="/notifications" className={styles.navItem}>
+                <Link href="/notification" className={styles.navItem}>
                     <FontAwesomeIcon icon={faBell} className={styles.icon} />
                 </Link>
             </div>

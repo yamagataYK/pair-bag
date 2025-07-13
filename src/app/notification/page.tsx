@@ -6,9 +6,9 @@ import Header from "@/components/header";
 export default function Page() {
     return (
         <>
-            <Header title='プロフィール' />
+            <Header title='おしらせ' />
             <Main className={styles.main}>
-                profile
+                通知
             </Main>
             <Footer />
         </>

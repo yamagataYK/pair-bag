@@ -3,12 +3,13 @@ import Main from "@/components/main";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 
+
 export default function Page() {
     return (
         <>
-            <Header title='プロフィール' />
+            <Header title="かざして検知" />
             <Main className={styles.main}>
-                profile
+                カメラ
             </Main>
             <Footer />
         </>
