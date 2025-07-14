@@ -29,7 +29,7 @@ const bagTypes: BagType[] = [
     image: bagFront
   },
   {
-    name: "たぬき",
+    name: "あかり",
     color: "blue",
     image: bagFront2
   },
