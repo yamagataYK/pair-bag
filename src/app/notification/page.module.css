@@ -1,0 +1,30 @@
+/* 通知のcss */
+
+.card {
+    width: 370px;
+    height: auto;
+    margin: 10px auto;
+    border: 1px solid #DBDBDB;
+    padding: 5px;
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.date {
+    font-size: 14px;
+    color: #636363;
+}
+
+.newBadge {
+    font-size: 15px;
+    color: #FF5252;
+}
+
+.message {
+    font-size: 16px;
+    margin-left: 10px;
+}

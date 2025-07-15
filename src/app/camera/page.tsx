@@ -9,7 +9,12 @@ export default function Page() {
         <>
             <Header title="かざして検知" />
             <Main className={styles.main}>
-                カメラ
+                <div className={styles.camera}>
+
+                </div>
+                <div className={styles.bagList}>
+
+                </div>
             </Main>
             <Footer />
         </>

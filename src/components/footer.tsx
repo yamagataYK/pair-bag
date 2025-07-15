@@ -2,7 +2,7 @@
 import styles from './footer.module.css';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCamera, faHouse, faMessage } from '@fortawesome/free-solid-svg-icons';
+import { faCamera, faHouse, faComment } from '@fortawesome/free-solid-svg-icons';
 
 export default function Footer() {
     return (
@@ -19,7 +19,7 @@ export default function Footer() {
                 </Link>
             </div>
             <Link href="/chat" className={styles.navItem}>
-                <FontAwesomeIcon icon={faMessage} className={styles.icon} />
+                <FontAwesomeIcon icon={faComment} className={styles.icon} />
                 <span className={styles.text}>トーク</span>
             </Link>
 

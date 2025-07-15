@@ -1,6 +1,8 @@
+/* 特集のcss */
+
 .card {
     width: 340px;
-    margin: 10px auto;
+    margin: 20px auto 30px;
     border-radius: 16px;
     box-shadow: 0px 3.6px 3.6px rgba(0, 0, 0, 0.25);
     background-color: #fff;
@@ -11,15 +13,17 @@
 
 .imageWrap {
     width: 340px;
-    height: 240px;
+    height: 150px;
+    overflow: hidden;
 }
 
 .image {
+    height: 100%;
     object-fit: cover;
 }
 
 .textWrap {
-    margin-top: -20px;
+    padding: 12px 16px;
     padding: 5px;
 }
 
@@ -34,8 +38,10 @@
     line-height: 1.4;
 }
 
-.link {
+.detail {
     font-size: 0.8rem;
     color: #999;
     text-decoration: none;
+    display: flex;
+    justify-content: end;
 }

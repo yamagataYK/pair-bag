@@ -2,7 +2,7 @@ import styles from "./topHeader.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faBullhorn, faUser } from '@fortawesome/free-solid-svg-icons';
 import Link from "next/link";
-import logo from '@/assets/logo.png'
+import Logo from '@/assets/logo.png'
 import Image from "next/image";
 
 
@@ -15,7 +15,7 @@ export default function TopHeader() {
                 </Link>
             </div>
             <div className={styles.headerItem}>
-                <Image className={styles.logo} src={logo} alt="ペアバッグ" />
+                <Image src={Logo} className={styles.logo} alt="ペアバッグ" />
             </div>
             <div className={`${styles.headerItem} ${styles.right}`}>
                 <Link href="/notice" className={styles.navItem}>

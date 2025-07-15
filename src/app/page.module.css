@@ -1,3 +1,5 @@
+/* トップのcss */
+
 .main {
   width: 100%;
   background-color: #FFF5E4;
@@ -64,7 +66,7 @@
   background-size: contain;
   background-position: center bottom;
   background-repeat: no-repeat;
-  margin-top: 20px;
+  margin-top: 30px;
   padding-bottom: 50px;
 
 }
@@ -95,8 +97,8 @@
 
 .addButtonWrap {
   position: absolute;
-  bottom: calc(30px + 16px);
-  right: 16px;
+  bottom: 80px;
+  right: 20px;
 
 }
 
@@ -113,10 +115,6 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* .addButton:hover {
-  transform: scale(1.05);
-} */
-
 .icon {
   margin: auto;
   width: 100%;
@@ -126,7 +124,7 @@
 
 .bagSelector {
   position: absolute;
-  bottom: calc(100% + 8px);
+  bottom: 60px;
   right: 0;
   display: flex;
   flex-direction: column;
@@ -144,7 +142,6 @@
   padding: 6px;
 }
 
-.bagSelectorItemName {}
 
 .bagSelectorItemImage {
   height: 100%;

@@ -70,8 +70,7 @@ export default function Page() {
             <div className={styles.addButton}
               onClick={() => {
                 setOpenBagSelector(!openBagSelector)
-              }}
-            >
+              }}>
               <FontAwesomeIcon icon={faPlus} className={styles.icon} />
               {openBagSelector &&
                 <div className={styles.bagSelector}>
@@ -79,8 +78,7 @@ export default function Page() {
                     <div key={idx} className={styles.bagSelectorItem}
                       onClick={() => {
                         setSelectedBag(bagType)
-                      }}
-                    >
+                      }}>
                       <Image src={bagType.image} alt={bagType.color} className={styles.bagSelectorItemImage} />
                       <p className={styles.bagSelectorItemName}>{bagType.name}</p>
                     </div>
