@@ -4,17 +4,19 @@ import styles from "./page.module.css";
 import Main from "@/components/main";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import Modal from "@/components/modal"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faListUl } from "@fortawesome/free-solid-svg-icons";
+import { faListUl } from "@fortawesome/free-solid-svg-icons";
 import { useSearchParams } from "next/navigation";
 
 
 
 export default function Page() {
-    const searchParams = useSearchParams()
+    const searchParams = useSearchParams();
+    const color = searchParams.get('color');
+    const name = searchParams.get('name');
 
-    const color = searchParams.get('color')
-    const name = searchParams.get('name')
+
 
     const handleColor = () => {
         switch (color) {
@@ -36,16 +38,29 @@ export default function Page() {
             <Main className={styles.main}>
                 <div className={`${styles.bagImage} ${handleColor()}`}>
                     <div className={styles.addButtonWrap}>
-                        <div className={styles.addButton}>
+                        <button type="button" className={styles.addButton}>
                             <FontAwesomeIcon icon={faListUl} className={styles.icon} />
-                        </div>
-                        <div className={styles.addButton}>
-                            <FontAwesomeIcon icon={faPlus} className={styles.icon} />
-                        </div>
+                        </button>
+                        <Modal modalTitle='商品詳細'>
+                            <form className={styles.detailForm}>
+                                <label>
+                                    名前
+                                    <input type="text" id={styles.itemName} />
+                                </label>
+                                <label>
+                                    個数
+                                    <button type="button">-</button>
+                                    <button type="button">1</button>
+                                    <button type="button">+</button>
+                                </label>
+                            </form>
+
+                        </Modal>
                     </div>
                 </div>
             </Main>
             <Footer />
         </>
+
     );
 }
