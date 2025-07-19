@@ -20,7 +20,7 @@ export default function Footer() {
             </div>
             <Link href="/chat" className={styles.navItem}>
                 <FontAwesomeIcon icon={faComment} className={styles.icon} />
-                <span className={styles.text}>トーク</span>
+                <span className={styles.text}>チャット</span>
             </Link>
 
 

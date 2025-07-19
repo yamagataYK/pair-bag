@@ -1,0 +1,134 @@
+.main {
+    width: 100%;
+    background-color: #FAFAFA;
+}
+
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+/* プロフィールリスト */
+.profileList {
+    margin-bottom: 24px;
+}
+
+.profileCard {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.profileInfo {
+    display: flex;
+}
+
+.user {
+    width: 70px;
+    height: 70px;
+    background: #ccc;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profileText {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-size: 28px;
+    color: #333333;
+}
+
+.id {
+    font-size: 14px;
+    color: #6d6d6d;
+
+}
+
+.penIcon {
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+
+.profileAction {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bagImgPlaceholder {
+    width: 40px;
+    height: 40px;
+    background: #eee;
+    border-radius: 4px;
+}
+
+.ellipsis {
+    color: #999;
+    font-size: 18px;
+}
+
+/* ボタン群 */
+.buttonWrap {
+    display: flex;
+    gap: 12px;
+    margin: 40px auto 20px;
+}
+
+.chatButton {
+    width: 148px;
+    height: 48px;
+    border-radius: 8px;
+    font-size: 19px;
+    font-weight: bold;
+    background-color: #F4C898;
+    box-shadow: 1px 2px 0px 0px #EAC297;
+    color: #FAFAFA;
+}
+
+.listButton {
+    width: 175px;
+    height: 48px;
+    border-radius: 8px;
+    font-size: 19px;
+    font-weight: bold;
+    background-color: #67DBD9;
+    box-shadow: 1px 2px 0px 0px #58B7B5;
+    color: #FAFAFA;
+}
+
+/* パートナーに一言 */
+.messageWrap {
+    width: 350px;
+    height: 160px;
+    margin: 24px 0;
+    border-radius: 12px;
+    background-color: #FFF1E7;
+
+}
+
+.messageTitle {
+    padding: 14px;
+    font-weight: bold;
+}
+
+.messageBox {
+    width: 320px;
+    height: 90px;
+    margin: auto;
+    background: #FAFAFA;
+    border-radius: 8px;
+    line-height: 1.5;
+}
+
+.messageText {
+    width: 100%;
+    padding: 10px;
+    resize: vertical;
+}

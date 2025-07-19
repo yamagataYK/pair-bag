@@ -9,36 +9,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import Footer from "@/components/footer";
 import TopHeader from "@/components/topHeader";
 import { useState } from "react";
-
-import bagFront from '@/assets/bagFront.png'
-import bagFront2 from '@/assets/bagFront2.png'
-import bagFront3 from '@/assets/bagFront3.png'
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
-
-
-type BagType = {
-  name: string,
-  color: 'red' | 'blue' | 'green',
-  image: StaticImport
-}
-
-const bagTypes: BagType[] = [
-  {
-    name: "やまけん",
-    color: "red",
-    image: bagFront
-  },
-  {
-    name: "あかり",
-    color: "blue",
-    image: bagFront2
-  },
-  {
-    name: "イベント",
-    color: "green",
-    image: bagFront3
-  }
-]
+import { bagTypes, type BagType } from '@/data/bagTypes'
 
 export default function Page() {
   const [openBagSelector, setOpenBagSelector] = useState<boolean>(false)
