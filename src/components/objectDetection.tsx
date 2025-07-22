@@ -19,10 +19,6 @@ const TRANSLATIONS: Record<string, string> = {
     laptop: "ノートPC",
 
 
-
-
-
-
 };
 
 export default function objectDetection() {
