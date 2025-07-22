@@ -21,7 +21,7 @@ export default function Page() {
       <Main className={styles.main}>
         <section className={styles.shopBagWrap} >
           <h1>買い物バッグ一覧</h1>
-          <input type="date" className={styles.date} />
+          <input type="month" className={styles.date} />
           <span className={styles.border} ></span>
           <div className={styles.boxWrap} >
             <div className={styles.box}></div>

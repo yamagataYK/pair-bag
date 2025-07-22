@@ -32,6 +32,9 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# .env ファイルは全て無視
+!.env.example
+# 例外としてコミット可能なもの
 
 # vercel
 .vercel
@@ -39,3 +42,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Python backend
+/yolo-backend/.venv/        # 仮想環境
+/yolo-backend/__pycache__/  # キャッシュ
+/yolo-backend/*.pt          # モデル重み
+
+

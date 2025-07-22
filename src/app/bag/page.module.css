@@ -5,7 +5,6 @@
     position: relative;
 }
 
-
 .bagImage {
     width: 100%;
     height: 100%;
@@ -13,9 +12,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     margin-top: -20px;
-
 }
-
 
 .red {
     background-image: url('/images/bag-background.png');
@@ -27,6 +24,24 @@
 
 .green {
     background-image: url('/images/bag-background3.png');
+}
+
+.checkList {
+    width: 20px;
+    height: 20px;
+    border-color: #247D9D;
+}
+
+.savedList {
+    padding-top: 120px;
+    padding-left: 30px;
+    color: #5c5c5c;
+    list-style: none;
+}
+
+.savedItem {
+    padding-top: 20px;
+    border-bottom: 1px solid #247D9D;
 }
 
 .modalBtnWrap {
@@ -43,7 +58,6 @@
     justify-content: end;
 }
 
-
 .stdListBtn {
     width: 100px;
     height: 38px;
@@ -54,7 +68,6 @@
     color: #FFFFFF;
     font-weight: bold;
 }
-
 
 .detailFormActions {
     display: flex;
