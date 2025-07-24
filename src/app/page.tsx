@@ -1,7 +1,7 @@
 'use client'
 
-import Image from "next/image";
 import styles from "./page.module.css";
+import Image from "next/image";
 import Link from "next/link";
 import Main from "@/components/main";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

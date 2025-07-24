@@ -71,6 +71,12 @@ export default function objectDetection() {
         return () => clearTimeout(timer);
     }, []);
 
+
+    //一時的なやつ　　名前のものを全部消している
+    const handleClearDetections = () => {
+        setNames([]);
+    };
+
     return (
         <>
             <video
@@ -104,7 +110,9 @@ export default function objectDetection() {
                 )}
                 <button
                     type="button"
-                    className={styles.listAddBtn}>
+                    className={styles.listAddBtn}
+                    onClick={handleClearDetections}
+                >
                     リストに追加
                 </button>
             </div>

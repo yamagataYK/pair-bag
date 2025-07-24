@@ -18,6 +18,9 @@ export default function RootLayout({ children, }: Readonly<{
 }>) {
   return (
     <html lang="ja">
+      <head>
+        <meta name="theme-color" content="#9DDCDC" />
+      </head>
       <body className={`${notoSansJp.variable}`}>
         {children}
       </body>
