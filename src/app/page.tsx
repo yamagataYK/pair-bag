@@ -3,9 +3,12 @@
 import styles from "./page.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import Main from "@/components/main";
+import bagRed from "@/assets/bagRed.png"
+import bagBlue from "@/assets/bagBlue.png"
+import bagGreen from "@/assets/bagGreen.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import Main from "@/components/main";
 import Footer from "@/components/footer";
 import TopHeader from "@/components/topHeader";
 import { useState } from "react";
@@ -23,11 +26,11 @@ export default function Page() {
           <h1>買い物バッグ一覧</h1>
           <input type="month" className={styles.date} />
           <span className={styles.border} ></span>
-          <div className={styles.boxWrap} >
-            <div className={styles.box}></div>
-            <div className={styles.box}></div>
-            <div className={styles.box}></div>
-            <div className={styles.box}></div>
+          <div className={styles.bagWrap} >
+            <Image src={bagRed} className={styles.bag} alt="バッグ" />
+            <Image src={bagBlue} className={styles.bag} alt="バッグ" />
+            <Image src={bagGreen} className={styles.bag} alt="バッグ" />
+            <Image src={bagRed} className={styles.bag} alt="バッグ" />
           </div>
         </section >
         <section className={styles.shareBagWrap} >

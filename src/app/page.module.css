@@ -44,7 +44,7 @@
 }
 
 
-.boxWrap {
+.bagWrap {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -53,10 +53,9 @@
 
 }
 
-.box {
-  width: 70px;
-  height: 70px;
-  background: #ccc;
+.bag {
+  width: 80px;
+  height: 90px;
 }
 
 

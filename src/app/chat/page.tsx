@@ -1,8 +1,10 @@
 import styles from "./page.module.css";
 import Main from "@/components/main";
 import Header from "@/components/header";
-import Image from "next/image";
 import Send from "@/assets/send.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import Image from "next/image";
 
 
 export default function Page() {
@@ -10,7 +12,17 @@ export default function Page() {
         <>
             <Header title='トーク' />
             <Main className={styles.main}>
-                チャット
+
+                <div className={styles.partner}>
+                    <FontAwesomeIcon icon={faUser} className={styles.user} />
+                    <p>今週買い物おねがいね〜！</p>
+                </div>
+                <p className={styles.myself}>
+                    りょうか~い
+                </p>
+                <p className={styles.myself}>
+                    買っといたよー
+                </p>
                 <div className={styles.footer}>
                     <input type="text" placeholder='メッセージを入力' className={styles.textarea} />
                     <button type="button" className={styles.iconWrap}>

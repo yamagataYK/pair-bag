@@ -11,15 +11,15 @@
 
 
 
-.imageWrap {
-    width: 340px;
-    height: 150px;
-    overflow: hidden;
-}
+/* .imageWrap {
+    width: 100%;
 
-.image {
-    height: 100%;
-    object-fit: cover;
+} */
+
+.imageWrap .image {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .textWrap {
