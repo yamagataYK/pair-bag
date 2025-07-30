@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faListUl } from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import { useSearchParams } from "next/navigation";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, Suspense } from "react";
 import Image from "next/image";
 
 
@@ -28,6 +28,17 @@ interface Item {
 
 
 export default function Page() {
+    return (
+        <Suspense fallback={<div>Loading…</div>}>
+            <PageContent />
+        </Suspense>
+    )
+}
+
+
+
+
+function PageContent() {
     const searchParams = useSearchParams();
     const color = searchParams.get('color');
     const name = searchParams.get('name');
