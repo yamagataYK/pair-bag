@@ -29,7 +29,7 @@ export default function Page() {
                     <div className={styles.textWrap}>
                         <h3 className={styles.title}>新発売！マカロン</h3>
                         <p className={styles.desc}>
-                            外はサクッと、中はしっとりな食感で大人気マカロン。
+                            外はサクッと、中はしっとりな食感で女性に大人気マカロン。
                         </p>
                         <p className={styles.detail}>詳しく見る &gt;</p>
                     </div>
