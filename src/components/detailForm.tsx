@@ -7,14 +7,14 @@ import SadStamp from "@/assets/sadStamp.svg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImages } from "@fortawesome/free-regular-svg-icons";
 import Image from "next/image";
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 
 
 interface Props {
     itemName: string;
     setItemName: (v: string) => void;
     qty: number;
-    setQty: (q: number) => void;
+    setQty: Dispatch<SetStateAction<number>>;
     unit: string;
     setUnit: (u: string) => void;
     category: string;
