@@ -27,9 +27,9 @@ export default function Page() {
                         <Image className={styles.image} src={introduction} alt="マカロンバナー写真" />
                     </div>
                     <div className={styles.textWrap}>
-                        <h3 className={styles.title}>21時のレモネードサワー</h3>
+                        <h3 className={styles.title}>新発売！マカロン</h3>
                         <p className={styles.desc}>
-                            爽やかな酸味と炭酸が弾ける、大人のレモネードサワー。
+                            外はサクッと、中はしっとりな食感で大人気マカロン。
                         </p>
                         <p className={styles.detail}>詳しく見る &gt;</p>
                     </div>
