@@ -21,7 +21,7 @@ const TRANSLATIONS: Record<string, string> = {
 
 };
 
-export default function objectDetection() {
+export default function ObjectDetection() {
     const videoRef = useRef<HTMLVideoElement>(null);
     const [names, setNames] = useState<string[]>([]);
 
