@@ -1,6 +1,6 @@
 'use client'
 
-import styles from "./objectDetection.module.css";
+import styles from "./ObjectDetection.module.css";
 import { detectObjects } from "@/data/detect";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
