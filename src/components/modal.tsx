@@ -9,10 +9,11 @@ import { ReactNode, useState } from "react";
 type Props = {
     modalTitle: string;
     children: ReactNode;
-    buttonIcon: IconDefinition;
+    buttonIcon?: IconDefinition;
 }
 
-export default function Modal({ modalTitle, children, buttonIcon = faPlus }: Props) {
+export default function Modal({ modalTitle, children, buttonIcon = faPlus,
+}: Props) {
 
     const [isOpen, setIsOpen] = useState(false);
 
