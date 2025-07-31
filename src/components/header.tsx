@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/navigation';
 
-type Props = {
+interface Props {
     title: string
 }
 

@@ -6,7 +6,7 @@ import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { ReactNode, useState } from "react";
 
-type Props = {
+interface Props {
     modalTitle: string;
     children: ReactNode;
     buttonIcon?: IconDefinition;
