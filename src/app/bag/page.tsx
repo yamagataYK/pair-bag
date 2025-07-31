@@ -36,8 +36,6 @@ export default function Page() {
 }
 
 
-
-
 function PageContent() {
     const searchParams = useSearchParams();
     const color = searchParams.get('color');
@@ -59,7 +57,7 @@ function PageContent() {
         }
     }
 
-    // フォームの state
+
     const [itemName, setItemName] = useState("");
     const [qty, setQty] = useState(1);
     const [unit, setUnit] = useState("");
@@ -68,13 +66,13 @@ function PageContent() {
     const [isDefaultItem, setIsDefaultItem] = useState(false);
     const [defaultItems, setDefaultItems] = useState<Item[]>([]);
 
-    // リストの state
+
     const [items, setItems] = useState<Item[]>([]);
 
-    //マウントガード用フラグ 
+
     const didMountRef = useRef(false);
 
-    // ①初回マウント時に localStorage から読み込む
+
     useEffect(() => {
         const saved = localStorage.getItem("bagItems");
         if (saved) {
@@ -82,7 +80,7 @@ function PageContent() {
         }
     }, []);
 
-    //  items が変わったときだけ保存（初回マウントはスキップ）
+
     useEffect(() => {
         if (didMountRef.current) {
             localStorage.setItem("bagItems", JSON.stringify(items));
@@ -91,7 +89,7 @@ function PageContent() {
         }
     }, [items]);
 
-    // 追加ハンドラ
+
     const handleAdd = () => {
         if (!itemName.trim()) return;
 
