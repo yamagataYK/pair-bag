@@ -108,7 +108,6 @@ function PageContent() {
             setDefaultItems(prev => [...prev, newItem]);
         }
 
-        // フォームリセット
         setItemName("");
         setQty(1);
         setUnit("");
@@ -117,19 +116,15 @@ function PageContent() {
         setIsDefaultItem(false);
     };
     const handleDelete = (id: string) => {
-        // 1) items から除外
+
         setItems(prev => prev.filter(it => it.id !== id));
-        // 2) 定番アイテムにもあれば除外したいならこちらも
+
         setDefaultItems(prev => prev.filter(it => it.id !== id));
     };
 
-
-    //定番アイテム
-
-    /** 定番アイテムをまとめて items に追加 */
     const handleAddSingleStdItem = (std: Item) => {
         const newItem: Item = {
-            ...std,  // ← 半角ピリオド３つのスプレッド演算子
+            ...std,
             id: Date.now().toString() + Math.random().toString(),
         };
         setItems(prev => [...prev, newItem]);
