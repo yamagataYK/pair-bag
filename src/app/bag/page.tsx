@@ -28,15 +28,15 @@ interface Item {
 
 
 export default function Page() {
-    return (
-        <Suspense fallback={<div>Loading…</div>}>
-            <PageContent />
-        </Suspense>
-    )
-}
+    //     return (
+    //         <Suspense fallback={<div>Loading…</div>}>
+    //             <PageContent />
+    //         </Suspense>
+    //     )
+    // }
 
 
-function PageContent() {
+    // function PageContent() {
     const searchParams = useSearchParams();
     const color = searchParams.get('color');
     const name = searchParams.get('name');
