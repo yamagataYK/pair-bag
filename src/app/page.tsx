@@ -23,8 +23,10 @@ export default function Page() {
       <TopHeader />
       <Main className={styles.main}>
         <section className={styles.shopBagWrap} >
-          <h1>買い物バッグ一覧</h1>
-          <input type="month" className={styles.date} />
+          <div className={styles.text}>
+            <h1>過去のバッグ一覧</h1>
+            <p>最新</p>
+          </div>
           <span className={styles.border} ></span>
           <div className={styles.bagWrap} >
             <Image src={bagRed} className={styles.bag} alt="バッグ" />
@@ -34,7 +36,7 @@ export default function Page() {
           </div>
         </section >
         <section className={styles.shareBagWrap} >
-          <h2>共有バッグ</h2>
+          <h2>{selectedBag.name}のバッグ</h2>
           <Link href={`/bag?color=${selectedBag.color}&name=${selectedBag.name}`} >
             <div className={styles.shareBag}>
               <Image className={styles.shareBagImage} src={selectedBag.image} alt={selectedBag?.color} />
@@ -52,6 +54,7 @@ export default function Page() {
                     <div key={idx} className={styles.bagSelectorItem}
                       onClick={() => {
                         setSelectedBag(bagType)
+                        setOpenBagSelector(false);
                       }}>
                       <Image src={bagType.image} alt={bagType.color} className={styles.bagSelectorItemImage} />
                       <p className={styles.bagSelectorItemName}>{bagType.name}</p>

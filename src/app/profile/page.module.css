@@ -47,11 +47,14 @@
 .id {
     font-size: 14px;
     color: #6d6d6d;
+}
 
+.icon {
+    font-size: 22px;
 }
 
 .penIcon {
-    font-size: 12px;
+    font-size: 16px;
     margin-right: 5px;
 }
 

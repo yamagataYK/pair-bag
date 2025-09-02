@@ -4,10 +4,11 @@ import styles from "./page.module.css";
 import Main from "@/components/main";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEllipsisV, faComment, faPen } from '@fortawesome/free-solid-svg-icons'
-import { partners, bagTypes } from '@/data/bagTypes'
-import Image from 'next/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEllipsisV, faComment, faPen } from '@fortawesome/free-solid-svg-icons';
+import { partners, bagTypes } from '@/data/bagTypes';
+import Image from 'next/image';
+import Link from 'next/link';
 
 
 export default function Page() {
@@ -52,9 +53,11 @@ export default function Page() {
                         })}
                     </section>
                     <div className={styles.buttonWrap}>
-                        <button className={styles.chatButton}>
-                            <FontAwesomeIcon icon={faComment} className={styles.penIcon} /> チャット
-                        </button>
+                        <Link href="/chat" >
+                            <button className={styles.chatButton}>
+                                <FontAwesomeIcon icon={faComment} className={styles.icon} /> チャット
+                            </button>
+                        </Link>
                         <button className={styles.listButton}>
                             定番アイテム一覧
                         </button>
