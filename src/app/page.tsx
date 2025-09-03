@@ -29,10 +29,24 @@ export default function Page() {
           </div>
           <span className={styles.border} ></span>
           <div className={styles.bagWrap} >
-            <Image src={bagRed} className={styles.bag} alt="バッグ" />
-            <Image src={bagBlue} className={styles.bag} alt="バッグ" />
-            <Image src={bagGreen} className={styles.bag} alt="バッグ" />
-            <Image src={bagRed} className={styles.bag} alt="バッグ" />
+            <Link href={`/bag?color=${selectedBag.color}&name=${selectedBag.name}`} >
+              <Image src={bagRed} className={styles.bag} alt="バッグ" />
+            </Link>
+            <Link href={`/bag?color=${selectedBag.color}&name=${selectedBag.name}`} >
+              <Image src={bagBlue} className={styles.bag} alt="バッグ" />
+            </Link>
+            <Link href={`/bag?color=${selectedBag.color}&name=${selectedBag.name}`} >
+              <Image src={bagGreen} className={styles.bag} alt="バッグ" />
+            </Link>
+            <Link href={`/bag?color=${selectedBag.color}&name=${selectedBag.name}`} >
+              <Image src={bagRed} className={styles.bag} alt="バッグ" />
+            </Link>
+          </div>
+          <div className={styles.date}>
+            <p>5/20</p>
+            <p>6/8</p>
+            <p>6/15</p>
+            <p>7/1</p>
           </div>
         </section >
         <section className={styles.shareBagWrap} >

@@ -73,6 +73,11 @@ function PageContent() {
     const didMountRef = useRef(false);
 
 
+    const categories = ["食品", "調味料", "日用品"] as const;
+    type CategoryTab = typeof categories[number];
+    const [activeCategory, setActiveCategory] = useState<CategoryTab>("食品");
+
+
     useEffect(() => {
         const saved = localStorage.getItem("bagItems");
         if (saved) {
@@ -105,7 +110,8 @@ function PageContent() {
         setItems(prev => [...prev, newItem]);
 
         if (isDefaultItem) {
-            setDefaultItems(prev => [...prev, newItem]);
+            const cat = category || activeCategory;
+            setDefaultItems(prev => [...prev, { ...newItem, category: cat }]);
         }
 
         setItemName("");
@@ -147,7 +153,7 @@ function PageContent() {
                                 </div>
                                 <div>
                                     {it.qty !== 1 && (<>{it.qty}個,{" "}</>)}{it.unit}
-                                    {it.category && <>[{it.category}]</>}
+                                    {/* {it.category && <>[{it.category}]</>} */}
                                     {it.feeling === "love" && (
                                         <Image src={LoveStamp} alt="好き" width={24} height={24} />
                                     )}
@@ -160,7 +166,7 @@ function PageContent() {
                                     <button
                                         type="button"
                                         className={styles.deleteBtn}
-                                        onClick={() => handleDelete(it.id)}   // ← ここで呼び出し
+                                        onClick={() => handleDelete(it.id)}
                                     >
                                         <FontAwesomeIcon icon={faTrashCan} className={styles.deleteBtn} />
                                     </button>
@@ -173,21 +179,31 @@ function PageContent() {
                         <Modal modalTitle='定番アイテム' buttonIcon={faListUl}>
                             <div className={styles.stdList}>
                                 <div className={styles.stdCategory}>
-                                    <button>食品</button>
-                                    <button>調味料</button>
-                                    <button>日用品</button>
-                                </div>
-                                <div className={styles.stdItemsContainer}>
-                                    {defaultItems.map(item => (
+                                    {categories.map((c) => (
                                         <button
-                                            key={item.id}
+                                            key={c}
                                             type="button"
-                                            className={styles.stdItem}
-                                            onClick={() => handleAddSingleStdItem(item)}
+                                            className={`${styles.tab} ${activeCategory === c ? styles.active : ""}`}
+                                            onClick={() => setActiveCategory(c)}
+                                            aria-pressed={activeCategory === c}
                                         >
-                                            {item.name}
+                                            {c}
                                         </button>
                                     ))}
+                                </div>
+                                <div className={styles.stdItemsContainer}>
+
+                                    {defaultItems.filter(item => item.category === activeCategory)
+                                        .map(item => (
+                                            <button
+                                                key={item.id}
+                                                type="button"
+                                                className={styles.stdItem}
+                                                onClick={() => handleAddSingleStdItem(item)}
+                                            >
+                                                {item.name}
+                                            </button>
+                                        ))}
                                 </div>
                             </div>
                             <div className={styles.stdListBtnWrap}>
