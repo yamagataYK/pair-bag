@@ -202,13 +202,12 @@ function PageContent() {
                                             >
                                                 {item.name}
                                                 {item.feeling && (
-                                                    <Image src={item.feeling === "love" ? LoveStamp :
-                                                        item.feeling === "repeat" ? RepeatStamp :
-                                                            SadStamp
-                                                    }
+                                                    <Image
+                                                        src={item.feeling === "love" ? LoveStamp :
+                                                            item.feeling === "repeat" ? RepeatStamp : SadStamp
+                                                        }
                                                         alt={item.feeling === "love" ? "好き" :
-                                                            item.feeling === "repeat" ? "リピ確!" :
-                                                                "微妙"
+                                                            item.feeling === "repeat" ? "リピ確!" : "微妙"
                                                         }
                                                         className={styles.stdStamp}
                                                     />

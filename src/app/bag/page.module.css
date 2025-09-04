@@ -113,13 +113,12 @@
 
 .stdStamp {
     position: absolute;
-    /* スタンプのサイズが16pxなので半分の8pxをマイナスオフセット＝半分だけ重なる */
     top: -8px;
     right: -8px;
     width: 20px;
     height: 20px;
     pointer-events: none;
-    /* スタンプがクリックを邪魔しないように */
+
 }
 
 
