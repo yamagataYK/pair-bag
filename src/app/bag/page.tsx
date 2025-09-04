@@ -192,7 +192,6 @@ function PageContent() {
                                     ))}
                                 </div>
                                 <div className={styles.stdItemsContainer}>
-
                                     {defaultItems.filter(item => item.category === activeCategory)
                                         .map(item => (
                                             <button
@@ -202,6 +201,18 @@ function PageContent() {
                                                 onClick={() => handleAddSingleStdItem(item)}
                                             >
                                                 {item.name}
+                                                {item.feeling && (
+                                                    <Image src={item.feeling === "love" ? LoveStamp :
+                                                        item.feeling === "repeat" ? RepeatStamp :
+                                                            SadStamp
+                                                    }
+                                                        alt={item.feeling === "love" ? "好き" :
+                                                            item.feeling === "repeat" ? "リピ確!" :
+                                                                "微妙"
+                                                        }
+                                                        className={styles.stdStamp}
+                                                    />
+                                                )}
                                             </button>
                                         ))}
                                 </div>

@@ -7,7 +7,7 @@ import SadStamp from "@/assets/sadStamp.svg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImages } from "@fortawesome/free-regular-svg-icons";
 import Image from "next/image";
-import React, { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction, useState, useRef } from "react";
 
 
 interface Props {
@@ -37,6 +37,23 @@ export default function DetailForm({
     feeling,
     setFeeling,
 }: Props) {
+
+    const [preview, setPreview] = useState<string>("");
+    const fileInputRef = useRef<HTMLInputElement>(null);
+
+    const handleFileChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+        // 古いURLを解放して差し替え
+        if (preview) URL.revokeObjectURL(preview);
+        setPreview(URL.createObjectURL(file));
+    };
+
+    const clearPreview = () => {
+        if (preview) URL.revokeObjectURL(preview);
+        setPreview("");
+        if (fileInputRef.current) fileInputRef.current.value = ""; // 同じ画像を再選択できるように
+    };
 
     return (
         <>
@@ -72,12 +89,35 @@ export default function DetailForm({
                             onClick={() => setQty((q) => q + 1)}
                         >+</button>
                     </div>
-                    <button
-                        type="button"
+                    <input
+                        id="itemImage"
+                        ref={fileInputRef}
+                        type="file"
+                        accept="image/*"
+                        hidden
+                        onChange={handleFileChange}
+                    />
+                    <label
+                        htmlFor="itemImage"
                         className={styles.imgBtn}
-                        aria-label="画像追加">
+                        aria-label="画像追加"
+                    >
                         <FontAwesomeIcon icon={faImages} />
-                    </button>
+                    </label>
+
+                    {preview && (
+                        <div className={styles.previewWrap}>
+                            <img src={preview} alt="選択画像プレビュー" className={styles.previewImg} />
+                            <button
+                                type="button"
+                                className={styles.clearBtn}
+                                aria-label="画像を削除"
+                                onClick={clearPreview}
+                            >
+                                ×
+                            </button>
+                        </div>
+                    )}
                 </div>
 
                 <div className={styles.formRow}>
