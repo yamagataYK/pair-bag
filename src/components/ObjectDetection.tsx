@@ -46,7 +46,6 @@ export default function ObjectDetection() {
                 timer = window.setTimeout(loop, 500);
                 return;
             }
-            // オフスクリーン canvas へ描画
             const off = document.createElement("canvas");
             off.width = w; off.height = h;
             off.getContext("2d")!.drawImage(video, 0, 0, w, h);
@@ -59,10 +58,10 @@ export default function ObjectDetection() {
                         result.forEach(n => merged.add(n));
                         return Array.from(merged);
                     });
-                    // ←ここまで
+
 
                 } catch {
-                    // 通信失敗は無視
+
                 }
             }
             timer = window.setTimeout(loop, 500);
@@ -72,7 +71,6 @@ export default function ObjectDetection() {
     }, []);
 
 
-    //一時的なやつ　　名前のものを全部消している
     const handleClearDetections = () => {
         setNames([]);
     };
